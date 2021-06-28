@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/table.html' import render_table %}
+{% from 'bootstrap/pagination.html' import render_pager, render_pagination %}
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+
+
+{% block content %}
+<h1>登记信息</h1>
+    {%  for message in get_flashed_messages() %}
+        <div class="alert-warning">
+            <button type="button" class="close",data-dismiss="alert">&times</button>
+            {{ message }}
+        </div>
+    {% endfor %}
+    <form method="POST" >
+
+{#    <form method="POST">#}
+        <div class="form-row">
+            <div class="col"> <input class="form-control" id="text" name="text" type="text"></div>
+            <div class="col"><select class="form-control" id="companyd" name="company"><option value="all">所有单位</option><option value="技术交易所有限公司">技术交易所有限公司</option><option value="上海东部科技成果转化有限公司">上海东部科技成果转化有限公司</option><option value="全国高校技术市场有限公司">全国高校技术市场有限公司</option></select></div>
+{#            <div class="col"><select class="form-control" id="branch" name="branch"><option value="all">不限</option><option value="技术转移党支部">技术转移党支部</option></select></div>#}
+             <div class="col"><select class="form-control" id="confirm" name="confirm"><option value="all">全部状态</option><option value="1">已通过</option><option value="0">未通过</option></select></div>
+            <div class="col"><input class="btn btn-primary btn-md" id="submit" name="submit" type="submit" value="搜索"><input class="btn btn-primary btn-md" id="clear" name="clear" type="submit" value="X"></div>
+        </div>
+{#    </form>#}
+<input type="submit" value="提交修改" name='bash' class="btn btn-primary">
+<table class="table" id="thetable">
+  <thead>
+  <tr>
+      <th scope="col">Id</th>
+      <th scope="col">名称</th>
+      <th scope="col">电话</th>
+      <th scope="col">所属单位</th>
+      <th scope="col">所属党支部</th>
+      <th scope="col">审核状态</th>
+  </tr>
+  </thead>
+{% for member in members %}
+    <tr>
+        <td name="id" value={{ member.id }}>{{ member.id }}</td>
+        <td>{{ member.name }}</td>
+        <td>{{ member.phone }}</td>
+        <td>{{ member.company }}</td>
+        <td>{{ member.branch }}</td>
+{#        <td>{{ member.confirmed }}</td>#}
+    <td>
+
+        {% if member.confirmed == False %}
+            未通过
+        <input type="checkbox" name="thecheckbox" value={{ member.id }}>
+    {% else %}
+            已通过
+            <input type="checkbox" name="thecheckbox" checked value={{ member.id }}>
+        {% endif %}
+
+    </td>
+    </tr>
+    {% endfor %}
+</table>
+    </form>
+    {{ render_pagination(pagination) }}
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    $("#thetable #checkall").click(function () {
+            if ($("#thetable #checkall").is(':checked')) {
+                $("#thetable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", true);
+                });
+            } else {
+                $("#thetable input[type=checkbox]").each(function () {
+                    $(this).prop("checked", false);
+                });
+            }
+        });
+        $("[data-toggle=tooltip]").tooltip();
+    });
+    </script>
+{% endblock %}

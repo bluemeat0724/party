@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>登记</title>
+        <link rel="stylesheet" href="https://res.wx.qq.com/open/libs/weui/2.3.0/weui.min.css"/>
+    </head>
+    <body>
+        <div class="page">
+            <form action method="post">
+                {{ form.csrf_token }}
+  <div class="weui-form">
+    <div class="weui-form__text-area">
+      <h2 class="weui-form__title">党员登记</h2>
+    <div class="weui-form__control-area">
+      <div class="weui-cells__group weui-cells__group_form">
+
+          <div class="weui-cells weui-cells_form">
+          <div class="weui-cell weui-cell_active">
+            <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
+            <div class="weui-cell__bd">
+                <input id="name" class="weui-input" placeholder="填写真实姓名" name='name' value="{{ form.data['name'] | default('',true) }}" />
+            </div>
+          </div>
+          <div class="weui-cell weui-cell_active">
+              <div class="weui-cell__hd"><label class="weui-label">手机号码</label></div>
+            <div class="weui-cell__bd">
+                <input id="phone" class="weui-input" placeholder="填写绑定的电话号码" type="number" pattern="[0-9]*" name="phone" value="{{ form.data['phone'] | default('',true) }}"/>
+            </div>
+          </div>
+              <div class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">所属单位</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" id="company" name="company">
+                        <option value="技术交易所有限公司">技术交易所有限公司</option>
+                        <option value="上海东部科技成果转化有限公司">上海东部科技成果转化有限公司</option>
+                        <option value="全国高校技术市场有限公司">全国高校技术市场有限公司</option>
+                    </select>
+                </div>
+              </div>
+              <div class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+                <div class="weui-cell__hd">
+                    <label for="" class="weui-label">所属支部</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <select class="weui-select" name="branch" id="brance">
+                        <option value="技术转移党支部">技术转移党支部</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+{#    <div class="weui-form__tips-area">#}
+{#      <p class="weui-form__tips">#}
+{#        表单页提示，居中对齐#}
+{#      </p>#}
+{#    </div>#}
+    <div class="weui-form__opr-area">
+        <input class="weui-btn weui-btn_primary" type="submit" value="提交" name='submit'>
+    </div>
+        </form>
+{#    <div class="weui-form__tips-area">#}
+{#      <p class="weui-form__tips">#}
+{#        表单页提示，居中对齐#}
+{#      </p>#}
+{#    </div>#}
+    <div class="weui-form__extra-area">
+{#      <div class="weui-footer">#}
+{#        <p class="weui-footer__links">#}
+{#          <a href="javascript:" class="weui-footer__link">底部链接文本</a>#}
+{#        </p>#}
+{#        <p class="weui-footer__text">Copyright © 2008-2019 weui.io</p>#}
+{#      </div>#}
+    </div>
+  </div>
+{#  <div id="js_toast" style="display: none;">#}
+{#      <div class="weui-mask_transparent"></div>#}
+{#      <div class="weui-toast">#}
+{#          <i class="weui-icon-success-no-circle weui-icon_toast"></i>#}
+{#          <p class="weui-toast__content">已完成</p>#}
+{#      </div>#}
+{#  </div>#}
+</div>
+    </form>
+
+
+    </body>
+</html>

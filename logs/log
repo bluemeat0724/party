@@ -1,0 +1,17 @@
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [28/Jun/2021 00:49:36] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 00:49:36] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 00:49:36] "[37mGET /static/my_logo.jpg HTTP/1.1[0m" 200 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [28/Jun/2021 01:03:21] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 01:03:41] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 01:04:11] "[33mGET /.well-known/pki-validation/fileauth.txt HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Jun/2021 01:04:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [28/Jun/2021 01:05:35] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 01:05:35] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 01:05:52] "[33mGET /.well-known/pki-validation/fileauth.txt HTTP/1.1[0m" 404 -
+127.0.0.1 - - [28/Jun/2021 01:07:12] "[37mGET /pki-validation/fileauth.txt HTTP/1.1[0m" 200 -
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [28/Jun/2021 01:09:17] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [28/Jun/2021 01:09:31] "[37mGET /.well-known/pki-validation/fileauth.txt HTTP/1.1[0m" 200 -

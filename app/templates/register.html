@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% from 'bootstrap/form.html' import render_form, render_field, render_form_row %}
+{% block title %}登记{% endblock %}
+
+
+
+{% block content %}
+</div><div class="col-md-4">
+<h1>党员登记</h1>
+    {{ render_form(form) }}
+</div>
+{% endblock %}
